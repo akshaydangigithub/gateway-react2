@@ -1,19 +1,19 @@
 import React from "react";
-import Card from "./components/Card.jsx";
-// import { greet, greet2 } from "./New";
+import Card from "./components/Card";
 
 const App = () => {
-  // greet();
-  // greet2();
+  let data = {
+    name: "Akshay",
+    age: 23,
+    salary: 30,
+    exp: "3 years",
+  };
+
+  // console.log(data);
 
   return (
-    <div className="grid grid-cols-4 gap-4">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+    <div className="grid grid-cols-4 gap-3">
+      <Card userData={data} />
     </div>
   );
 };
