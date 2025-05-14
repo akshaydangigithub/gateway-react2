@@ -1,50 +1,18 @@
 import React from "react";
-import Card from "./components/Card";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import NotFound from "./pages/NotFound";
 
 const App = () => {
-  let data = [
-    {
-      name: "Akshay",
-      age: 23,
-      salary: 30,
-      exp: "3 years",
-    },
-    {
-      name: "Naman",
-      age: 23,
-      salary: 30,
-      exp: "3 years",
-    },
-    {
-      name: "Akshay",
-      age: 23,
-      salary: 30,
-      exp: "3 years",
-    },
-    {
-      name: "Akshay",
-      age: 23,
-      salary: 30,
-      exp: "3 years",
-    },
-    {
-      name: "Akshay",
-      age: 23,
-      salary: 30,
-      exp: "3 years",
-    },
-  ];
-
-  // console.log(data);
-
   return (
-    <div className="grid grid-cols-4 gap-3">
-     {
-      data.map((user)=>(
-         <Card userData={user} />
-      ))
-     }
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
