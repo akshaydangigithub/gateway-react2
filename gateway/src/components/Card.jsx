@@ -1,7 +1,6 @@
 import React from "react";
 
 const Card = ({ userData }) => {
-  console.log(userData.name);
 
   return (
     <div className="w-full h-80 border-2 rounded-xl flex items-center justify-center flex-col gap-4">
