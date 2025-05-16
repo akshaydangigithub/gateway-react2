@@ -1,15 +1,35 @@
-import React, { createContext, useState } from 'react'
-export const AkshayContext = createContext(null)
+import React, { createContext, useState } from "react";
+export const DataContext = createContext();
 
-const ContextApi = ({children}) => {
+const ContextApi = ({ children }) => {
+  const [name, setName] = useState("");
+  const [price, setPrice] = useState("");
+  const [image, setImage] = useState("");
+  const [desc, setDesc] = useState("");
+  const [products, setProducts] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [cartData, setCartData] = useState([]);
 
-  const [data, setdata] = useState(0)
+  let contextValue = {
+    products,
+    setProducts,
+    name,
+    setName,
+    price,
+    setPrice,
+    image,
+    setImage,
+    desc,
+    setDesc,
+    activeIndex,
+    setActiveIndex,
+    cartData,
+    setCartData,
+  };
 
   return (
-    <AkshayContext.Provider value={{data, setdata}}>
-{children}
-    </AkshayContext.Provider>
-  )
-}
+    <DataContext.Provider value={contextValue}>{children}</DataContext.Provider>
+  );
+};
 
-export default ContextApi
+export default ContextApi;
